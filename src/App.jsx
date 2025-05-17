@@ -20,7 +20,7 @@ export default function App() {
   function handleToggleItem(id) {
     setItems((items) =>
       items.map((item) =>
-        item.id == id ? { ...item, packed: !item.packed } : item
+        item.id === id ? { ...item, packed: !item.packed } : item
       )
     );
   }
@@ -45,12 +45,12 @@ export default function App() {
 }
 
 function Logo() {
-  return <h1>🌴Far Away👜</h1>;
+  return <h1>🏝️Far Away👜</h1>;
 }
 //--------------------------------------------------------------------------------------------------------------
 
 function Form({ onAddItems }) {
-  // what is controlled elements?--> by default, input fields maintains their state in DOM so it is hard to read their values and also leaves this state in DOM and in REACT we want all the elements state in Application so we need 1. state and 2. use that state as a value to the input 3. for the same element listen for the change event---->Controlled elements.
+  // what is controlled elements?--> by default, input fields maintains their state in DOM so it is hard to read their values and also their state lives in DOM and in REACT we want all the elements state in Application so we need 1. state and 2. use that state as a value to the input 3. for the same element listen for the change event---->Controlled elements.
   // *******so basically react wants to own the state and control the state.
   // *******state of these 2 elements is controlled inside the Form comp  with desc and quantity state.
   const [description, setDescription] = useState("");
@@ -75,7 +75,7 @@ function Form({ onAddItems }) {
         onChange={(e) => setQuantity(Number(e.target.value))}
       >
         {/* Dynamically generating 20 numbers in select dropdown */}
-        {/* Array.from() takes 2 arg, first array like DS or map and second arg is the map like fn , that map like fn there are 2 args one is element and other is index */}
+        {/* Array.from() takes 2 arg, first array like DS or map Datastructure and second arg is the map like fn , that map like fn there are 2 args one is element and other is index */}
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
           <option value={num} key={num}>
             {num}
