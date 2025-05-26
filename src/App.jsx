@@ -140,7 +140,7 @@ function PackingList({ items, onDeleteItem, onToggleItems, onClearList }) {
   );
 }
 //------------------------------------------------------------------------------------------
-
+//
 function Item({ item, onDeleteItem, onToggleItems }) {
   return (
     <li>
